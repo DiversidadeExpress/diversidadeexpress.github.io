@@ -20,6 +20,7 @@
     <main>
         <section id="produtos">
             <h2>Nossos Produtos</h2>
+            <input type="text" id="search" placeholder="Pesquisar produtos..." oninput="filtrarProdutos()">
             <div class="grid-container" id="grid-produtos">
                 <!-- Os produtos serão adicionados aqui via JavaScript -->
             </div>
@@ -32,8 +33,7 @@
 
     <div id="detalhes" class="detalhes" style="display:none;">
         <span onclick="fecharDetalhes()" class="fechar">&times;</span>
-        <h2 id="titulo-detalhes"></h2>
-        <p id="descricao-detalhes"></p>
+        <iframe id="iframe-produto" src="" frameborder="0"></iframe>
     </div>
 
     <script src="script.js"></script>
