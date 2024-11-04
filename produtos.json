@@ -1,23 +1,30 @@
 [
     {
+        "id": 1,
         "nome": "Produto 1",
-        "descricao": "Descrição do Produto 1",
+        "descricao": "Descrição do produto 1",
         "preco": 99.99,
-        "imagem": "https://via.placeholder.com/150",
-        "iframeUrl": "https://example.com/produto1"
+        "imagem": "produto1.jpg"
     },
     {
+        "id": 2,
         "nome": "Produto 2",
-        "descricao": "Descrição do Produto 2",
-        "preco": 79.99,
-        "imagem": "https://via.placeholder.com/150",
-        "iframeUrl": "https://example.com/produto2"
+        "descricao": "Descrição do produto 2",
+        "preco": 149.99,
+        "imagem": "produto2.jpg"
     },
     {
+        "id": 3,
         "nome": "Produto 3",
-        "descricao": "Descrição do Produto 3",
-        "preco": 59.99,
-        "imagem": "https://via.placeholder.com/150",
-        "iframeUrl": "https://example.com/produto3"
+        "descricao": "Descrição do produto 3",
+        "preco": 89.99,
+        "imagem": "produto3.jpg"
+    },
+    {
+        "id": 4,
+        "nome": "Produto 4",
+        "descricao": "Descrição do produto 4",
+        "preco": 129.99,
+        "imagem": "produto4.jpg"
     }
 ]
