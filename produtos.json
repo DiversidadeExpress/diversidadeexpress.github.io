@@ -4,27 +4,31 @@
         "nome": "Produto 1",
         "descricao": "Descrição do produto 1",
         "preco": 99.99,
-        "imagem": "produto1.jpg"
+        "imagem": "produto1.jpg",
+        "url": "https://example.com/produto1"
     },
     {
         "id": 2,
         "nome": "Produto 2",
         "descricao": "Descrição do produto 2",
         "preco": 149.99,
-        "imagem": "produto2.jpg"
+        "imagem": "produto2.jpg",
+        "url": "https://example.com/produto2"
     },
     {
         "id": 3,
         "nome": "Produto 3",
         "descricao": "Descrição do produto 3",
         "preco": 89.99,
-        "imagem": "produto3.jpg"
+        "imagem": "produto3.jpg",
+        "url": "https://example.com/produto3"
     },
     {
         "id": 4,
         "nome": "Produto 4",
         "descricao": "Descrição do produto 4",
         "preco": 129.99,
-        "imagem": "produto4.jpg"
+        "imagem": "produto4.jpg",
+        "url": "https://example.com/produto4"
     }
 ]
