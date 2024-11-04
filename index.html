@@ -42,6 +42,39 @@
             bottom: 0;
             width: 100%;
         }
+        /* Estilos para o modal */
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 1000; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; 
+            background-color: rgba(0,0,0,0.7);
+            padding-top: 60px;
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -55,12 +88,20 @@
     <!-- Produtos serão inseridos aqui -->
 </div>
 
+<!-- Modal -->
+<div id="productModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2 id="modal-title"></h2>
+        <iframe id="product-iframe" width="100%" height="400px" frameborder="0"></iframe>
+    </div>
+</div>
+
 <footer>
     <p>&copy; 2024 Loja de Produtos. Todos os direitos reservados.</p>
 </footer>
 
 <script>
-    // Função para carregar produtos de um arquivo JSON
     async function loadProducts() {
         const response = await fetch('produtos.json');
         const products = await response.json();
@@ -74,13 +115,31 @@
                 <img src="${product.imagem}" alt="${product.nome}">
                 <p>${product.descricao}</p>
                 <p>Preço: R$ ${product.preco.toFixed(2)}</p>
-                <button>Comprar</button>
+                <button onclick="openModal('${product.nome}', '${product.iframeUrl}')">Comprar</button>
             `;
             productList.appendChild(productDiv);
         });
     }
 
-    // Carrega os produtos quando a página é carregada
+    function openModal(title, iframeUrl) {
+        document.getElementById('modal-title').innerText = title;
+        document.getElementById('product-iframe').src = iframeUrl;
+        document.getElementById('productModal').style.display = "block";
+    }
+
+    const closeModal = () => {
+        document.getElementById('productModal').style.display = "none";
+        document.getElementById('product-iframe').src = ""; // Limpa o iframe
+    };
+
+    // Adiciona evento para fechar o modal
+    document.querySelector('.close').onclick = closeModal;
+    window.onclick = function(event) {
+        if (event.target === document.getElementById('productModal')) {
+            closeModal();
+        }
+    };
+
     window.onload = loadProducts;
 </script>
 
